@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>SEC 10-K Financial Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>SEC 10-K Financial Analysis</h1>
+    <p>Microsoft vs. Apple | 10-Year Comparison</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="company">Select Company</label>
+      <select id="company">
+        <option value="MSFT">Microsoft (MSFT)</option>
+        <option value="AAPL">Apple (AAPL)</option>
+      </select>
+      <p id="status" role="status"></p>
+    </section>
+
+    <section>
+      <h2>Financial Ratios</h2>
+      <p id="selectedYear"></p>
+      <div class="cards">
+        <article class="card">
+          <h3>Current Ratio</h3>
+          <p id="currentRatio">—</p>
+        </article>
+        <article class="card">
+          <h3>Debt-to-Assets</h3>
+          <p id="debtRatio">—</p>
+        </article>
+        <article class="card">
+          <h3>Asset Turnover</h3>
+          <p id="assetTurnover">—</p>
+        </article>
+        <article class="card">
+          <h3>Net Profit Margin</h3>
+          <p id="profitMargin">—</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>MD&A Sentiment and Stock Price</h2>
+      <p>
+        Fiscal year-end closing prices compared
+        with positive-to-negative sentiment ratios.
+      </p>
+      <div class="chart-container">
+        <canvas id="sentimentChart"></canvas>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Financial Ratio Trends</h2>
+      <div class="chart-container">
+        <canvas id="ratioChart"></canvas>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Notes</h2>
+      <p>
+        Data sources: SEC EDGAR Form 10-K filings,
+        Loughran-McDonald Master Dictionary,
+        and historical market prices.
+      </p>
+      <p>
+        Fiscal year-end stock prices generally
+        precede the corresponding 10-K publication.
+        Correlation does not establish causation.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Graduate Accounting Research Project</p>
+  </footer>
+</body>
+</html>
